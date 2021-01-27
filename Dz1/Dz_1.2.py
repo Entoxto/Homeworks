@@ -7,9 +7,8 @@
 
 a = int(input('time in sec: '))
 while a < 0:
-    if a < 0:
-        print('please enter a>=0')
-        a = int(input('time in sec: '))
+    print('please enter a>=0')
+    a = int(input('time in sec: '))
 hour = a//3600
 min = (a-hour*3600)//60
 sec = (a-hour*3600-min*60)
