@@ -1,6 +1,6 @@
 # Найти количество четных и нечетных чисел в списке
 s = input("введите числа через пробел: ")
-b = [int(i) for i in s.split(' ') if i.isdigit()]
+b = [int(i) for i in s.split() if i.isdigit()]
 even_number = 0
 un_even_number = 0
 for x in b:
