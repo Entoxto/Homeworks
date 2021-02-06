@@ -30,7 +30,7 @@ def my_func(x, y):
     r = x
     while f != 1:
         f -= 1
-        r = r*x
+        r *= x
     g = 1 / r
     return g
 

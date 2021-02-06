@@ -4,14 +4,12 @@
 """
 
 
-def Del(a, b):
-    while True:
-        if b == 0:
-            b = float(input('Делитель не может раняться 0, пожалуйста введите другое значение: '))
-        else:
-            c = a / b
-            break
+def divisions(a, b):
+    try:
+        c = a / b
+    except ZeroDivisionError:
+        c = print("Вы пытаетесь разделить на 0!")
     return c
 
 
-print(Del((float(input('Введите делимое: '))), float(input('Введите делитель: '))))
+print(divisions((float(input('Введите делимое: '))), float(input('Введите делитель: '))))
