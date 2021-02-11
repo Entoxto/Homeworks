@@ -10,7 +10,7 @@ def fact(n):
     f = 1
     for i in range(n):
         if i <= n:
-            f *= (i + 1)
+            f *= i + 1
             yield f
 
 
