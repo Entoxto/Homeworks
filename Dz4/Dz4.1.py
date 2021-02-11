@@ -5,7 +5,7 @@
 """
 from sys import argv
 
-name, working_hours, rate_per_hour, bonus = argv
+_, working_hours, rate_per_hour, bonus = argv
 
 
 def zp(working_hours, rate_per_hour, bonus):

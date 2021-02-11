@@ -26,11 +26,14 @@ with open("5.7.txt", encoding='UTF-8') as file:
         if profit > 0:
             n += 1
             summa += profit
-    profit_middle = {'average_profit': summa / n}
-    print(f'Средняя прибыль компаний = {summa / n}')
-    sp.extend([profit_list, profit_middle])
-    with open('5.7.json', 'w', encoding='UTF-8') as file1:
-        json.dump(sp, file1)
+
+profit_middle = {'average_profit': summa / n}
+print(f'Средняя прибыль компаний = {summa / n}')
+sp.extend([profit_list, profit_middle])
+
+
+with open('5.7.json', 'w', encoding='UTF-8') as file1:
+    json.dump(sp, file1)
 
 with open('5.7.json', 'r', encoding='UTF-8') as read_file:
     data = json.load(read_file)

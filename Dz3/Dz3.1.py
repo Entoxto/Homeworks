@@ -8,7 +8,7 @@ def divisions(a, b):
     try:
         c = a / b
     except ZeroDivisionError:
-        c = print("Вы пытаетесь разделить на 0!")
+        c = None
     return c
 
 
