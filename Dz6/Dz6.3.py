@@ -21,16 +21,16 @@ class Worker:
 
 class Position(Worker):
     def get_full_name(self):
-        return f'{self.name} {self.surname}'
+        print(self.name + " " + self.surname)
 
     def get_total_income(self):
         try:
-            return Worker._income[Worker.position[f'{self.name} {self.surname}']]["wage"] + \
-                   Worker._income[Worker.position[f'{self.name} {self.surname}']]["bonus"]
+            print(Worker._income[Worker.position[self.name + " " + self.surname]]["wage"] +
+                  Worker._income[Worker.position[self.name + " " + self.surname]]["bonus"])
         except KeyError:
-            return "Такого сотрудника у нас нет..."
+            print("Такого сотрудника у нас нет...")
 
 
 a = Position("Геннадий", "Морозов")
-print(a.get_full_name())
-print(a.get_total_income())
+a.get_full_name()
+a.get_total_income()

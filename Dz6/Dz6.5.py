@@ -8,7 +8,7 @@ Handle (маркер). В каждом из классов реализоват�
 
 class Stationery:
 
-    def __init__(self, title=None):
+    def __init__(self, title):
         self.title = title
 
     def draw(self):
@@ -17,24 +17,22 @@ class Stationery:
 
 class Pen(Stationery):
     def draw(self):
-        print(f"Запуск отрисовки ручкой")
+        print(f"Запуск отрисовки, инструмент: {self.title}")
 
 
 class Pencil(Stationery):
     def draw(self):
-        print(f"Запуск отрисовки карандашом")
+        print(f"Запуск отрисовки, инструмент: {self.title}")
 
 
 class Handle(Stationery):
     def draw(self):
-        print(f"Запуск отрисовки маркером")
+        print(f"Запуск отрисовки, инструмент: {self.title}")
 
 
-stationery = Stationery()
-stationery.draw()
-pen = Pen()
+pen = Pen("ручка")
 pen.draw()
-pencil = Pencil()
+pencil = Pencil("карандаш")
 pencil.draw()
-handle = Handle()
+handle = Handle("маркер")
 handle.draw()
