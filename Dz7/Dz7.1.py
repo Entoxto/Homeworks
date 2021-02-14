@@ -17,13 +17,14 @@ class Matrix:
 
     def __str__(self):
         ma = []
+        result = ''
         for i in self.a:
             ma.append(max(i))
         for i in range(len(self.a)):
             for j in range(len(self.a[i])):
-                print(f'{self.a[i][j]:{len(str(max(ma)))}d}', end="   ")
-            print()
-        return ''
+                result += f'{self.a[i][j]:{len(str(max(ma)))}d}   '
+            result += '\n'
+        return result
 
     def __add__(self, other):
         result = []
