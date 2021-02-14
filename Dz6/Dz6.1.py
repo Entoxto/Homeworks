@@ -6,20 +6,26 @@
 порядке (красный, желтый, зеленый). Проверить работу примера, создав экземпляр и вызвав описанный метод.
 """
 from time import sleep
+from itertools import cycle
 
 
 class TrafficLight:
-    __color = ['red', 'yellow', 'green']
+    __color = 'red'
 
-    def running(self):
-        while True:
-            print(TrafficLight.__color[0])
-            sleep(7)
-            print(TrafficLight.__color[1])
-            sleep(2)
-            print(TrafficLight.__color[2])
-            sleep(5)
+    def running(self, color=__color, stop=None):
+        if color != TrafficLight.__color:
+            TrafficLight.__color = color
+        variants = {'red': [['red', 7], ['yellow', 2], ['green', 5]],
+                    'yellow': [['yellow', 2], ['green', 5], ['red', 7]],
+                    'green': [['green', 5], ['red', 7], ['yellow', 2]]}
+        counter = 0
+        for el in cycle(variants[TrafficLight.__color]):
+            print(el[0])
+            sleep(el[1])
+            counter += 1
+            if counter == stop:
+                break
 
 
-a = TrafficLight()
-a.running()
+tl = TrafficLight()
+tl.running('yellow', 6)

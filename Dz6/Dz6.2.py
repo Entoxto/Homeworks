@@ -16,8 +16,8 @@ class Road:
         self.h = h
 
     def mass(self):
-        print(f'{self._length * self._width * self.p * self.h} кг асфальта потребуется')
+        return f'{self._length * self._width * self.p * self.h} кг асфальта потребуется'
 
 
 a = Road(20, 5000)
-a.mass()
+print(a.mass())
